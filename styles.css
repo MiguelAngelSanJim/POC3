@@ -1,38 +1,51 @@
 body {
   margin: 0;
-  overflow: hidden;
-  background-color: #f4f4f4;
   font-family: Arial, sans-serif;
 }
 
-h1 {
-  text-align: center;
-  margin: 10px 0;
-  font-size: 24px;
-}
-
-#menu {
+/* Contenedor de los controles */
+#controls {
   position: absolute;
+  z-index: 10;
   top: 10px;
   left: 10px;
-  z-index: 10;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  border-radius: 8px;
+  display: flex;
+  gap: 10px;
 }
 
-button {
-  display: block;
-  margin: 5px 0;
-  padding: 10px 20px;
-  font-size: 16px;
+/* Estilo de los botones */
+#controls button {
   background-color: #007bff;
   color: white;
   border: none;
+  padding: 10px 15px;
   border-radius: 5px;
+  font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
+#controls button:hover {
   background-color: #0056b3;
+}
+
+#controls button:active {
+  background-color: #003f7f;
+}
+
+#controls button:focus {
+  outline: none;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 600px) {
+  #controls {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #controls button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
 }
