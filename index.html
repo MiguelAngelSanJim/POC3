@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Productos RA</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- A-Frame para la visualización en 3D y AR.js -->
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ar.js/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+  <div id="productMenu" class="menu">
+    <h2>Selecciona un producto</h2>
+    <button onclick="selectProduct('bolso')">Bolso</button>
+    <button onclick="selectProduct('gameboy')">GameBoy</button>
+    <button onclick="selectProduct('silla')">Silla</button>
+  </div>
+
+  <!-- A-Frame AR Scene -->
+  <a-scene embedded arjs>
+    <!-- Cámara para realidad aumentada -->
+    <a-entity camera></a-entity>
+
+    <!-- Marcador Hiro que detecta la superficie -->
+    <a-marker preset="hiro" id="marker">
+      <a-entity id="product" gltf-model="url(img/bolso.glb)" scale="1 1 1" position="0 0 0" rotation="0 0 0"></a-entity>
+    </a-marker>
+    
+    <!-- Luz para la escena -->
+    <a-light type="directional" position="2 4 -3" intensity="1.5"></a-light>
+  </a-scene>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
