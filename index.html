@@ -1,36 +1,31 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo de Productos RA</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- A-Frame para la visualización en 3D y AR.js -->
-  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/ar.js/aframe/build/aframe-ar.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div id="productMenu" class="menu">
-    <h2>Selecciona un producto</h2>
-    <button onclick="selectProduct('bolso')">Bolso</button>
-    <button onclick="selectProduct('gameboy')">GameBoy</button>
-    <button onclick="selectProduct('silla')">Silla</button>
+  <h1 style="text-align: center;">Catálogo de Productos RA</h1>
+
+  <!-- Menú de selección de productos -->
+  <div id="menu">
+    <button id="btn1">Producto 1</button>
+    <button id="btn2">Producto 2</button>
+    <button id="btn3">Producto 3</button>
   </div>
 
-  <!-- A-Frame AR Scene -->
+  <!-- Escena de Realidad Aumentada -->
   <a-scene embedded arjs>
-    <!-- Cámara para realidad aumentada -->
-    <a-entity camera></a-entity>
-
-    <!-- Marcador Hiro que detecta la superficie -->
-    <a-marker preset="hiro" id="marker">
-      <a-entity id="product" gltf-model="url(img/gameboy.glb)" scale="1 1 1" position="0 0 0" rotation="0 0 0"></a-entity>
-    </a-marker>
-    
-    <!-- Luz para la escena -->
-    <a-light type="directional" position="2 4 -3" intensity="1.5"></a-light>
+    <!-- Entidades 3D de los productos -->
+    <a-entity id="product1" position="0 0 0" scale="0.1 0.1 0.1" gltf-model="url(models/producto1.glb)" visible="false"></a-entity>
+    <a-entity id="product2" position="0 0 0" scale="0.1 0.1 0.1" gltf-model="url(models/producto2.glb)" visible="false"></a-entity>
+    <a-entity id="product3" position="0 0 0" scale="0.1 0.1 0.1" gltf-model="url(models/producto3.glb)" visible="false"></a-entity>
   </a-scene>
 
-  <script src="js/app.js"></script>
+  <script src="js/ra.js"></script>
 </body>
 </html>
