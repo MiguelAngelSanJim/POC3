@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Control de modelos 3D
+  document.addEventListener("DOMContentLoaded", () => {
+  // Obtener los modelos y botones
   const product1 = document.getElementById("product1");
   const product2 = document.getElementById("product2");
   const product3 = document.getElementById("product3");
@@ -20,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btn2 = document.getElementById("btn2");
   const btn3 = document.getElementById("btn3");
 
-  // Función para mostrar un modelo 3D y ocultar los demás
+  // Función para mostrar un modelo y ocultar los demás
   function showModel(modelToShow) {
     product1.setAttribute("visible", "false");
     product2.setAttribute("visible", "false");
@@ -34,4 +36,3 @@ document.addEventListener("DOMContentLoaded", () => {
   btn2.addEventListener("click", () => showModel(product2));
   btn3.addEventListener("click", () => showModel(product3));
 });
-
