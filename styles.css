@@ -7,7 +7,7 @@ body {
 
 h1 {
   text-align: center;
-  margin-top: 20px;
+  margin: 10px 0;
   font-size: 24px;
 }
 
@@ -16,14 +16,15 @@ h1 {
   top: 10px;
   left: 10px;
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 button {
-  margin: 5px;
-  padding: 10px;
+  display: block;
+  margin: 5px 0;
+  padding: 10px 20px;
   font-size: 16px;
   background-color: #007bff;
   color: white;
